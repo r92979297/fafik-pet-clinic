@@ -1,6 +1,6 @@
 package com.fafik.fafikpetclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntity{
 
     private String name;
 
