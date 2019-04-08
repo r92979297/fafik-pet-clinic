@@ -2,9 +2,11 @@ package com.fafik.fafikpetclinic.services.map;
 
 import com.fafik.fafikpetclinic.model.Owner;
 import com.fafik.fafikpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService{
 
     @Override
