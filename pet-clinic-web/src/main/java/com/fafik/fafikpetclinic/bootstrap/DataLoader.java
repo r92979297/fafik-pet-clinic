@@ -1,6 +1,7 @@
 package com.fafik.fafikpetclinic.bootstrap;
 
 import com.fafik.fafikpetclinic.model.Owner;
+import com.fafik.fafikpetclinic.model.Pet;
 import com.fafik.fafikpetclinic.model.PetType;
 import com.fafik.fafikpetclinic.model.Vet;
 import com.fafik.fafikpetclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.fafik.fafikpetclinic.services.PetTypeService;
 import com.fafik.fafikpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -38,12 +41,34 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Scofield");
+        owner1.setAdress("123 Mickiewicza");
+        owner1.setCity("Warsaw");
+        owner1.setTelephone("12343124");
 
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Scooby");
+        owner1.getPets().add(mikesPet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Shrek");
+        owner2.setAdress("134 Arbat");
+        owner2.setCity("Moscow");
+        owner2.setTelephone("653412315");
+
+
+        Pet fionasCat = new Pet();
+        fionasCat.setPetType(savedCatPetType);
+        fionasCat.setOwner(owner2);
+        fionasCat.setBirthDate(LocalDate.now());
+        fionasCat.setName("Lindsy");
+        owner2.getPets().add(fionasCat);
+
+        ownerService.save(owner1);
 
         ownerService.save(owner2);
 
