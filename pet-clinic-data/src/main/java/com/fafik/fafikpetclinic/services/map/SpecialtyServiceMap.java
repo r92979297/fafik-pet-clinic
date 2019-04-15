@@ -1,11 +1,12 @@
 package com.fafik.fafikpetclinic.services.map;
 
 import com.fafik.fafikpetclinic.model.Speciality;
-import com.fafik.fafikpetclinic.services.SpecialtiesService;
+import com.fafik.fafikpetclinic.services.SpecialtyService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class SpecialtiesServiceMap extends AbstractMapService<Speciality,Long> implements SpecialtiesService {
+@Service
+public class SpecialtyServiceMap extends AbstractMapService<Speciality,Long> implements SpecialtyService {
 
     @Override
     public Set<Speciality> findAll() {
