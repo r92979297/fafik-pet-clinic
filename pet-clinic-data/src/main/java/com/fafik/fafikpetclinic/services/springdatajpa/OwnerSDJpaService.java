@@ -14,9 +14,9 @@ import java.util.Set;
 @Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
 
-    private OwnerRepository ownerRepository;
-    private PetTypeRepository petTypeRepository;
-    private PetRepository petRepository;
+    private final OwnerRepository ownerRepository;
+    private final PetTypeRepository petTypeRepository;
+    private final PetRepository petRepository;
 
     public OwnerSDJpaService(OwnerRepository ownerRepository, PetTypeRepository petTypeRepository,
                              PetRepository petRepository) {
