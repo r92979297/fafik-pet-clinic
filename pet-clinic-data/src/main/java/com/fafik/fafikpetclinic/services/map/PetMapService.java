@@ -1,30 +1,31 @@
 package com.fafik.fafikpetclinic.services.map;
 
-import com.fafik.fafikpetclinic.model.Speciality;
-import com.fafik.fafikpetclinic.services.SpecialtyService;
+import com.fafik.fafikpetclinic.model.Pet;
+import com.fafik.fafikpetclinic.services.PetService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+
 @Service
-public class SpecialtyServiceMap extends AbstractMapService<Speciality,Long> implements SpecialtyService {
+public class PetMapService extends AbstractMapService<Pet,Long> implements PetService {
 
     @Override
-    public Set<Speciality> findAll() {
+    public Set<Pet> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Speciality findById(Long id) {
+    public Pet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Speciality save(Speciality object) {
+    public Pet save(Pet object) {
         return super.save(object);
     }
 
     @Override
-    public void delete(Speciality object) {
+    public void delete(Pet object) {
         super.delete(object);
     }
 
