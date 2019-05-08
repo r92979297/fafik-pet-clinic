@@ -2,10 +2,12 @@ package com.fafik.fafikpetclinic.services.map;
 
 import com.fafik.fafikpetclinic.model.Specialty;
 import com.fafik.fafikpetclinic.services.SpecialtyService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
 public class SpecialtyMapService extends AbstractMapService<Specialty,Long> implements SpecialtyService {
 
     @Override
