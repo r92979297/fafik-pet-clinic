@@ -2,9 +2,10 @@ package com.fafik.fafikpetclinic.services.map;
 
 import com.fafik.fafikpetclinic.model.Visit;
 import com.fafik.fafikpetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
 
     @Override
