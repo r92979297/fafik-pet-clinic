@@ -1,10 +1,7 @@
 package com.fafik.fafikpetclinic.bootstrap;
 
 import com.fafik.fafikpetclinic.model.*;
-import com.fafik.fafikpetclinic.services.OwnerService;
-import com.fafik.fafikpetclinic.services.PetTypeService;
-import com.fafik.fafikpetclinic.services.SpecialtyService;
-import com.fafik.fafikpetclinic.services.VetService;
+import com.fafik.fafikpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService= petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
 
@@ -69,6 +68,12 @@ public class DataLoader implements CommandLineRunner {
         mikesPet.setName("Scooby");
         owner1.getPets().add(mikesPet);
         ownerService.save(owner1);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(mikesPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy doggy");
+        visitService.save(catVisit);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
