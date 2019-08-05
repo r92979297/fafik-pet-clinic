@@ -18,6 +18,6 @@ public class Vet extends Person {
     @JoinTable(name = "vat_specialties",
             joinColumns = @JoinColumn(name = "vat_id"),
             inverseJoinColumns = @JoinColumn(name = "speciality_id") )
-    private Set<Specialty> specialties =new HashSet<>();
+    private Set<Specialty> specialities =new HashSet<>();
 
 }
